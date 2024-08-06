@@ -175,7 +175,7 @@ resource "aws_instance" "in1" {
     key_name = aws_key_pair.keypair.key_name
     subnet_id = aws_subnet.private1.id
     security_groups = [ aws_security_group.sq1.id ]
-    user_data = base64decode(file("app.sh"))
+    user_data = base64encode(file("app.sh"))
   
 }
 resource "aws_instance" "in2" {
